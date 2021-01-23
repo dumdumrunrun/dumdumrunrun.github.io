@@ -239,7 +239,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-23 02:56:23" itemprop="dateModified" datetime="2021-01-23T02:56:23+08:00">2021-01-23</time>
+        <time title="Modified: 2021-01-24 00:46:12" itemprop="dateModified" datetime="2021-01-24T00:46:12+08:00">2021-01-24</time>
       </span>
 
   
@@ -252,66 +252,67 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="什麼是「程式設計」？"><a href="#什麼是「程式設計」？" class="headerlink" title="什麼是「程式設計」？"></a>什麼是「程式設計」？</h2><p>程式設計即是「設計解決特定問題的方法」，解決問題的方法由兩個部分組成「資料結構」和「演算法」。</p>
+          <h2 id="什麼是「程式設計」？"><a href="#什麼是「程式設計」？" class="headerlink" title="什麼是「程式設計」？"></a>什麼是「程式設計」？</h2><hr>
+<p>程式設計即是「設計解決特定問題的方法」，解決問題的方法由兩個部分組成「資料結構」和「演算法」。</p>
+<h4 id="資料結構-Data-Structure"><a href="#資料結構-Data-Structure" class="headerlink" title="資料結構 Data Structure"></a>資料結構 Data Structure</h4><p>資料結構，就是電腦中儲存、組織資料的方式；良好的資料結構，可以提升演算法的執行效率。</p>
+<blockquote>
+<p>就像是圖書館中，將不同領域的書籍分類、建立索引，如此一來找書時，就更加容易了。</p>
+</blockquote>
+<h4 id="演算法-Algorithm"><a href="#演算法-Algorithm" class="headerlink" title="演算法 Algorithm"></a>演算法 Algorithm</h4><p>演算法，就是對資料進行有限的計算步驟，最終使問題得以解決。</p>
+<blockquote>
+<p>就像是在圖書館找書時，我們有一定的步驟：1.確認要找的書屬於「圖書十大分類法中」的哪一類。2.依照索引值順序尋找。</p>
+</blockquote>
+<h2 id="什麼是「內存」？"><a href="#什麼是「內存」？" class="headerlink" title="什麼是「內存」？"></a>什麼是「內存」？</h2><hr>
+<p>當程序要執行時，電腦會將程序加載至內存，也就是記憶體；換句話說，內存會存儲，程序運行期間所有用到的資料。</p>
+<blockquote>
+<p>了解資料是如何存儲在內存中，才能打好程式設計的基礎。</p>
+</blockquote>
+<p>內存中儲存資料的最基本單位為 Bit (位元)，一個 Bit 只能存放 0 或 1 兩種狀態 (即通電和沒通電兩種狀態，通電為 1 沒通電為 0)，由於 Bit 的單位太小，於是將 8 Bit 組合為一組來使用，而這樣的組合稱為 Byte (位元組)。</p>
+<blockquote>
+<p>1 個 Bit 能表示 $2^1$ 種狀態，由此可知 8 個 Bit 也就是 1 個 Byte 能表示 $2^8=256$ 種狀態了。</p>
+</blockquote>
+<h2 id="什麼是「計算機編碼」？"><a href="#什麼是「計算機編碼」？" class="headerlink" title="什麼是「計算機編碼」？"></a>什麼是「計算機編碼」？</h2><hr>
+<p>計算機僅認得 0 和 1 兩種數字，要如何將人所習慣的語言、符號儲存、表示給電腦知道？</p>
+<p>這時就需要「編碼」，編碼的意思就是「將資訊從一種形式轉換成另一種形式」。</p>
+<p>以「文字編碼」舉例來說，在「美國標準資訊交換碼 (ASCII : American Standard Code for Information Interchange)」中，英文字母 A 對應到電腦中是以 $0100$ $0001_2$ (下標 2 表示二進制) 儲存。</p>
+<blockquote>
+<p>$0100$ $0001_2$ $= 65_{10}$</p>
+</blockquote>
+<p>編碼乍看之下就是符號的轉換，然而背後實際上的考量卻遠遠不止如此，整數的編碼經歷了以下幾個階段：</p>
 <ul>
-<li><p>資料結構 Data Structure<br>資料結構，就是電腦中儲存、組織資料的方式；良好的資料結構，可以提升演算法的執行效率。<br>ex. 就如同圖書館中，將不同領域的書籍分類、建立索引，如此一來找書時，就更加容易了。</p>
+<li>原碼 sign &amp; magnitude (淘汰)</li>
+<li>一補數 ones’ complement (淘汰)</li>
+<li>二補數 two’s complement (如今電腦)</li>
+</ul>
+<p>關於編碼的知識推薦閱讀<a target="_blank" rel="noopener" href="https://hackmd.io/@sysprog/binary-representation?type=view"> [解讀計算機編碼｜Jserv] </a></p>
+<h2 id="無符號數-Unsigned-和有符號數-Signed"><a href="#無符號數-Unsigned-和有符號數-Signed" class="headerlink" title="無符號數 (Unsigned) 和有符號數 (Signed)"></a>無符號數 (Unsigned) 和有符號數 (Signed)</h2><hr>
+<p>所謂的有無符號指的是「負號 -」</p>
+<p>在計算機中「無符號數」只能用來表示「零、和正數」；而「有符號數」則能表示「負數、零、正數」。顯而易見的，同樣的資料長度，有符號數因為多了負數要表示，其所能表示數的大小就比無符號數來的小。</p>
+<p>以 1 Byte 長度的資料來說，無符號數能表示 $0$ ~ $255$ 的整數，而以「原碼 sign &amp; magnitude」編碼的有符號數僅能表達 $-127$ ~ $127$。</p>
+<h2 id="什麼是「二補數系統」？"><a href="#什麼是「二補數系統」？" class="headerlink" title="什麼是「二補數系統」？"></a>什麼是「二補數系統」？</h2><hr>
+<p>在數學中，補數 Complement 定義如下：「兩數 (A、B) 相加等於某數 (C)，則兩數 (A、B) 互為某數 (C) 的補數」；舉例來說： $1 + 9 = 10$，則「1 的十補數為 9」或「9 的十補數為 1」。</p>
+<p>而此處二補數所指的「2」，指的是容量 (模)，亦即單一位數所能表示的狀態數。對 1 Bit 二進位數來說，只有 0 和 1 兩種狀態 (引用”計算機編碼｜Jserv”)。</p>
+<p>此處簡單說明如何求 2 補數，背後編碼設計思路請參考上方「推薦閱讀」。</p>
+<ul>
+<li><p>二進制中，求一數的 2 補數方法：「反轉所有位，最後加上 1」<br>$0001$ $0111_2$ &lt;- $23_{10}$<br>$1110$ $1000_2$ &lt;- 反轉位元<br>$1110$ $1001_2$ &lt;- 加上 1<br>$1110$ $1001_2$ &lt;- 得到 2 補數 $-23_{10}$</p>
 </li>
-<li><p>演算法 Algorithm<br>演算法，就是對資料進行有限的計算步驟，最終使問題得以解決。<br>ex. 就像在圖書館找書時，我們有一定的步驟：1.確認要找的書屬於「圖書十大分類法中」的哪一類。2.依照索引值順序尋找。</p>
+<li><p>加法運算方法：「求和，溢位部分捨棄」<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0001$ $0111_2$ &lt;- $23_{10}$<br>&nbsp;&nbsp;+&nbsp;$1110$ $1001_2$ &lt;- $-23_{10}$<br>&nbsp;&nbsp;$1$ $0000$ $0000_2$ &lt;- 溢位捨棄<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$0000$ $0000_2$ &lt;- $0_{10}$</p>
 </li>
 </ul>
-<h2 id="什麼是「內存」？"><a href="#什麼是「內存」？" class="headerlink" title="什麼是「內存」？"></a>什麼是「內存」？</h2><p>當程序要執行時，電腦會將程序加載至內存，也就是記憶體；換句話說，內存會存儲，程序運行期間所有用到的資料。<br>ex. 了解資料是如何存儲在內存中，則是我們學習程式設計的第一步</p>
-<p>在電腦中資料皆由一連串的 0 和 1 組成，在內存中則是以通不通電表示兩種狀態，這樣的狀態定義為 bit。<br>ex. bit 為電腦中最小「存儲單位」，可以存儲 0 或 1 兩種狀態其中一種</p>
-<p>當 8 個 bit 為一組時，則定義為 byte；換句話說，1 個 bit 能表示 $2^1$ 種狀態，8 個 bit 就能表示 $2^8$ 種狀態了。<br>ex. 1 byte = 8 bit</p>
-<h2 id="什麼是「計算機編碼」？"><a href="#什麼是「計算機編碼」？" class="headerlink" title="什麼是「計算機編碼」？"></a>什麼是「計算機編碼」？</h2><p>當我們的硬體能夠儲存 0 和 1 兩種狀態了，我們要如何將人所習慣的語言 (數字、文字…) 存儲在電腦中？</p>
-<p>所以這時就需要「編碼」，編碼的意思就是「將資訊從一種形式轉換成另一種形式」。</p>
-<p>舉例「文字編碼」的一種：美國標準資訊交換碼 (ASCII : American Standard Code for Information Interchange)，英文字母 A 在電腦中以 65 的二進制方式儲存 (100 0001)。<br>ex. 對電腦而言，英文字母 ‘A’ 就是 “100 0001” 這串數據</p>
-<p>編碼乍看下就是符號的轉換，但問題來了數學上的「整數」要如何編碼？要考量的問題有什麼？<br>ex. 人可以理解數學中的正負數、加減運算，但電腦只理解 0 和 1，不知道什麼正負、加減；因此經歷了幾個世代的努力，「二補數系統」誕生。</p>
-<p>在說明二補數系統前，先了解下無符號數和有符號數是什麼吧。</p>
-<h2 id="無符號數-Unsigned-和有符號數-Signed"><a href="#無符號數-Unsigned-和有符號數-Signed" class="headerlink" title="無符號數 (Unsigned) 和有符號數 (Signed)"></a>無符號數 (Unsigned) 和有符號數 (Signed)</h2><ul>
-<li><p>無符號數和有符號數，指的是「有無負號’-‘」。</p>
-</li>
-<li><p>一個 8 bits (1 byte) 長度的資料來說，二進制存儲的方式為 0000 0000，共 8 位數，每一位數可以是 0 或 1，所以總共有 $2^8=256$ 種組合方式。</p>
-</li>
-<li><p>這樣的資料長度，拿來表示自然數 (非負整數 0, 1, 2, 3…)，則可以表示 0 ~ 255 的十進制整數，這樣的表示法為無符號數。<br>0 (十進制)   = 0000 0000 (二進制無符號數)<br>255 (十進制) = 1111 1111 (二進制無符號數)</p>
-</li>
-<li><p>那麼問題來了，若要將負整數也表達進 1 byte 長度的資料呢 (有符號數)？<br>最直覺的想法為，將最左邊的位元空出來作為表示正負，剩下的位元表示數字，這樣的編碼方式稱為「原碼 sign &amp; magnitude」。<br>1 (十進制)  = 0000 0001 (二進制有符號數)</p>
-</li>
-<li><p>1 (十進制) = 1000 0001 (二進制有符號數)</p>
-</li>
-</ul>
-<p>然而這樣的編碼方式，導致硬體電路設計複雜，且 0 的表達式有兩種 +0 和 -0 (0000 0000、1000 0000)，所以很快就被淘汰了，由補數系統取代。</p>
-<p>接著經歷過「一補數 Ones’ complement 」的時代後，「二補數 Two’s complement」為如今電腦所使用。<br>ex. 一補數的出現減輕了硬體電路設計的複雜度，但 0 仍然有兩種表達式</p>
-<h2 id="什麼是「二補數系統」？"><a href="#什麼是「二補數系統」？" class="headerlink" title="什麼是「二補數系統」？"></a>什麼是「二補數系統」？</h2><ul>
-<li><p>在數學中，補數 Complement 定義如下：「兩數 (A、B) 相加等於某數 (C)，則兩數 (A、B) 互為某數 (C) 的補數」<br>ex. 1 + 9 = 10；則「1 的十補數為 9」或「9 的十補數為 1」</p>
-</li>
-<li><p>關於二補數的解釋，引用<a target="_blank" rel="noopener" href="https://hackmd.io/@sysprog/binary-representation?type=view">“解讀計算機編碼｜Jserv” (&lt;-推薦深度閱讀)</a><br>「一補數」的英語寫法為 ones’ complement，中國簡體譯作「反碼」;<br>「二補數」的英語寫法為 two’s complement，中國簡體譯作「補碼」。<br>注意兩者英語寫法中撇號 (apostrophe) 的位置。<br>ones’ complement 是對 1 求補數，這裡的 1，本質是個有限位數構成的數值系統中所能表示出的範圍，8 位元能表示的無號最大值是 11111111，所以是一系列的 1，用 “ones”。<br>至於 two’s complement 是對 2 求補數，這個 2 指的是容量 (模)，亦即單一位數能表示的狀態數。對 1 位元二進位數來說，只有 0 和 1 兩種狀態。</p>
-</li>
-<li><p>二補數系統的優點：<br>硬體電路設計簡單 (只需加法電路和二補數電路即可完成有號數的加法和減法)。<br>0 有唯一表達式。</p>
-</li>
-<li><p>在二進制下，求一個數的二補數，需反轉所有位，然後加上 1；以 8 bits 資料長度舉例 (下方以下標表示進制)：<br>$0001$ $0111_2$ : ($23_{10}$)<br>$1110$ $1000_2$ : (反轉)<br>$1110$ $1001_2$ : (加 1)<br>$1110$ $1001_2$ : ($-23_{10}$)</p>
-</li>
-<li><p>二補數下的加法運算，為求和後，溢位部分直接捨棄；以上述 23 加上 -23 舉例：<br>&nbsp;&nbsp;&nbsp;$0001$ $0111_2$<br>&nbsp;&nbsp;&nbsp;$1110$ $1001_2$</p>
-</li>
-</ul>
-<hr>
-<p>$1$ $0000$ $0000_2$<br>最後得到 $0000$ $0000_2$ 的結果</p>
-<h2 id="「常數-Constant」v-s-「變數-Variable」概念"><a href="#「常數-Constant」v-s-「變數-Variable」概念" class="headerlink" title="「常數 Constant」v.s.「變數 Variable」概念"></a>「常數 Constant」v.s.「變數 Variable」概念</h2><ul>
-<li><p>常數，即「一個數值固定不變的表示」，如「圓周率\pi\、單純的數字 10」<br>在計算機中，常數即「程序運行過程中該符號表示的值皆固定不變」</p>
-</li>
-<li><p>變數，即「一個數值不固定的表示」，如「整數 x」(x 為整數系中任意一個數，可以是 0 可以是 -1 …)<br>在計算機中，變數為一個「容器」用來存儲資料，依據程式設計者需求，可以儲存不同值到該符號表示中</p>
-</li>
-</ul>
-<h2 id="「宣告-Declaration」-v-s-「定義-Definition」概念"><a href="#「宣告-Declaration」-v-s-「定義-Definition」概念" class="headerlink" title="「宣告 Declaration」 v.s.「定義 Definition」概念"></a>「宣告 Declaration」 v.s.「定義 Definition」概念</h2><p>這邊以 C 語言來說明，因在 MQL4 中 extern 被用於外部參數的表示。</p>
+<h2 id="「常數-Constant」v-s-「變數-Variable」概念"><a href="#「常數-Constant」v-s-「變數-Variable」概念" class="headerlink" title="「常數 Constant」v.s.「變數 Variable」概念"></a>「常數 Constant」v.s.「變數 Variable」概念</h2><hr>
+<h4 id="常數"><a href="#常數" class="headerlink" title="常數"></a>常數</h4><p>常數的意思是「一個數值固定不變的表示」，如「圓周率$pi$、單純的數字 10」；而在計算機中，常數指的是「程序運行過程中該符號表示的值皆固定不變」。</p>
+<h4 id="變數"><a href="#變數" class="headerlink" title="變數"></a>變數</h4><p>變數的意思是「一個數值不固定的表示」，如「整數 x」(x 為整數系中任意一個數，可以是 0 可以是 -1 …)；而在計算機中，變數指的是「一個用來存儲資料的容器，依據程式設計者需求，可以儲存不同值到該符號表示中」。</p>
+<h2 id="「宣告-Declaration」-v-s-「定義-Definition」概念"><a href="#「宣告-Declaration」-v-s-「定義-Definition」概念" class="headerlink" title="「宣告 Declaration」 v.s.「定義 Definition」概念"></a>「宣告 Declaration」 v.s.「定義 Definition」概念</h2><hr>
+<p>這邊以 C 語言來說明，因在 MQL4 中 extern 被用於外部參數的表示。</p>
 <p>宣告和定義本質為「向計算機聲明某個符號表示」，差異在於「是否有進行記憶體的分配 (給定初始值)」；由此可知定義只能一次，宣告可以多次。</p>
-<p>一般情況下，變數的宣告和定義是等價的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int number; &#x2F;&#x2F; 宣告整型變數 number，計算機會為其分配記憶體空間，所以也是定義</span><br><span class="line">int number &#x3D; 1; &#x2F;&#x2F; 定義整型變數 number</span><br></pre></td></tr></table></figure>
-<p>標頭檔 (.h) 中常見的關鍵字 extern，此時的變數宣告和定義不等價：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern int number; &#x2F;&#x2F; 宣告整型變數 number，表示該變數 number 被定義在別處</span><br></pre></td></tr></table></figure>
-<p>當關鍵字 extern 宣告帶有初始化值，此時的變數宣告等同定義：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern int number &#x3D; 1; &#x2F;&#x2F; 由於初始化值涉及分配記憶體空間，即使帶有 extern，此處也為定義</span><br></pre></td></tr></table></figure>
-<p>所以，回到一開始的觀念，宣告和定義的差異「是否涉及記憶體分配」。</p>
+<ul>
+<li>一般情況下，變數的宣告和定義是等價的：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int number; &#x2F;&#x2F; 宣告整型變數 number，計算機會為其分配記憶體空間，所以也是定義</span><br><span class="line">int number &#x3D; 1; &#x2F;&#x2F; 定義整型變數 number</span><br></pre></td></tr></table></figure></li>
+<li>標頭檔 (.h) 中常見的關鍵字 extern，此時的變數宣告和定義不等價：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern int number; &#x2F;&#x2F; 宣告整型變數 number，表示該變數 number 被定義在別處</span><br></pre></td></tr></table></figure></li>
+<li>當關鍵字 extern 宣告帶有初始化值，此時的變數宣告等同定義：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extern int number &#x3D; 1; &#x2F;&#x2F; 由於初始化值涉及分配記憶體空間，即使帶有 extern，此處也為定義</span><br></pre></td></tr></table></figure>
+所以，回到一開始的觀念，宣告和定義的差異「是否涉及記憶體分配」。</li>
+</ul>
 <h2 id="MQL4-中的「整數型態-Integer」"><a href="#MQL4-中的「整數型態-Integer」" class="headerlink" title="MQL4 中的「整數型態 Integer」"></a>MQL4 中的「整數型態 Integer」</h2><p>MQL4 整數型態有：char, uchar, short, ushort, int, uint, long, ulong (u：unsigned 無符號數)；下方資料引用<a target="_blank" rel="noopener" href="https://docs.mql4.com/basis/types">“MQL4 Data Types | MQL4 Reference”</a></p>
-<ol>
+<ul>
 <li><p>char<br>1 byte (8 bits) ，$2^8=256$ 種組合，可存儲 -127 ~ 128 的整數 (十進制)</p>
 </li>
 <li><p>uchar<br>1 byte (8 bits)，$2^8=256$ 種組合，可存儲 0 ~ 255 的整數 (十進制)</p>
@@ -328,8 +329,9 @@
 </li>
 <li><p>ulong<br>8 bytes (64 bits)，$2^{64}= 18 446 744 073 709 551 616$ 種組合，可存儲 0 ~ 18 446 744 073 709 551 616 的整數 (十進制)</p>
 </li>
-</ol>
-<h2 id="資料引用"><a href="#資料引用" class="headerlink" title="資料引用"></a>資料引用</h2><ul>
+</ul>
+<h2 id="資料引用"><a href="#資料引用" class="headerlink" title="資料引用"></a>資料引用</h2><hr>
+<ul>
 <li><a target="_blank" rel="noopener" href="https://hackmd.io/@sysprog/binary-representation?type=view">“解讀計算機編碼｜Jserv” (&lt;-推薦深度閱讀)</a></li>
 <li><a target="_blank" rel="noopener" href="https://docs.mql4.com/basis/types">“MQL4 Data Types | MQL4 Reference”</a></li>
 </ul>
