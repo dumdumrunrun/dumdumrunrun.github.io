@@ -169,7 +169,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -199,6 +199,116 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/06/%E6%95%B8%E7%B5%84-Array-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="PoYu Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/06/%E6%95%B8%E7%B5%84-Array-C/" class="post-title-link" itemprop="url">數組 Array (C)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-06 03:36:08" itemprop="dateCreated datePublished" datetime="2021-03-06T03:36:08+08:00">2021-03-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="數組是什麼？"><a href="#數組是什麼？" class="headerlink" title="數組是什麼？"></a>數組是什麼？</h2><hr>
+<p>數組又稱為陣列，用來存儲相同型態資料的資料結構；由於其以連續的方式存儲在記憶體中，有讀寫快速的特性。</p>
+<h2 id="什麼時候會使用到數組-Array？"><a href="#什麼時候會使用到數組-Array？" class="headerlink" title="什麼時候會使用到數組 Array？"></a>什麼時候會使用到數組 Array？</h2><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int student_id1, student_id2, student_id3;</span><br><span class="line">student_id1 &#x3D; 40096;</span><br><span class="line">student_id2 &#x3D; 40097;</span><br><span class="line">student_id3 &#x3D; 40098;</span><br><span class="line">printf(&quot;student 1 id &#x3D; %i\n&quot;, student_id1);</span><br><span class="line">printf(&quot;student 2 id &#x3D; %i\n&quot;, student_id2);</span><br><span class="line">printf(&quot;student 3 id &#x3D; %i\n&quot;, student_id3);</span><br></pre></td></tr></table></figure>
+<p>在校務系統中，工程師找到上面這個程式碼片段。宣告了三個變數，用來記錄學生的學號，並將紀錄的學號於終端打印出來。恩…看起來還行，但我們還有 100 筆…不 1000 筆學生的資料還沒輸入！看來今晚要加班了…</p>
+<p>這段例子，我們知道當有 N 個變量需要進行處理時，一個一個宣告是不切實際的，而且在迴圈（while, for, do-while）的使用上也很不方便，在這樣的情況下，選擇「數組 Array」作為存儲資料的容器，看來才是明智的。</p>
+<h2 id="數組的組成"><a href="#數組的組成" class="headerlink" title="數組的組成"></a>數組的組成</h2><hr>
+<p>讓我們用數組 Array 改寫下上方這個程式碼片段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int student_id[3]; &#x2F;* 宣告一個整型資料型態的靜態數組，空間為 3，未初始化 *&#x2F;</span><br><span class="line">student_id[0] &#x3D; 40096;</span><br><span class="line">student_id[1] &#x3D; 40097;</span><br><span class="line">student_id[2] &#x3D; 40098;</span><br><span class="line">printf(&quot;student 1 id &#x3D; %i\n&quot;, student_id[0]);</span><br><span class="line">printf(&quot;student 2 id &#x3D; %i\n&quot;, student_id2[1]);</span><br><span class="line">printf(&quot;student 3 id &#x3D; %i\n&quot;, student_id3[2]);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>資料型態，和變數一樣，必須要宣告我們即將要存儲的資料是何種型態。</li>
+<li>名稱（標示符 Identifier），和變數相同，必須宣告唯一的標示符，作為使用數組的名稱。</li>
+<li>‘[]’方括號，在數組宣告時，裡面的數字，表示我們要向編譯器要幾個該資料型態的空間；上方方括號中的 3，就表示要了 3 個存儲整型資料的記憶體空間。</li>
+<li>‘[]’方括號，另一個功能就是「訪問數組中的元素，索引值從 0 開始訪問第一個元素」，下方娓娓道來為什麼是「從零開始」。</li>
+</ul>
+<h2 id="數組的初始化"><a href="#數組的初始化" class="headerlink" title="數組的初始化"></a>數組的初始化</h2><hr>
+<p>在上方，我們單純的宣告了一個空間為 3 的靜態數組，並未初始化，讓我們來看看初始化一個靜態數組有哪些方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int student_id[3] &#x3D; &#123;0, 0, 0&#125;; &#x2F;* 宣告一個空間為 3 的整型靜態數組，並將元素初始化為 0 *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int student_id[] &#x3D; &#123;0, 0, 0&#125;; &#x2F;* 不指定數組空間，直接初始化 3 個元素值為 0 *&#x2F;</span><br></pre></td></tr></table></figure>
+<p>上方兩種方式，編譯器都知道我們要 3 個整型資料空間，並初始化為 0 !</p>
+<h2 id="為什麼數組的索引值從-0-開始？"><a href="#為什麼數組的索引值從-0-開始？" class="headerlink" title="為什麼數組的索引值從 0 開始？"></a>為什麼數組的索引值從 0 開始？</h2><hr>
+<p>在探討「訪問數組元素時，為什麼索引值是從 0 開始？」這件事前，我們需要知道「數組名稱代表的意義」。我們知道使用變數名稱時，可以取出其存儲的資料，這是因為「變數名稱，對應到特定一塊記憶體位置」，所以我們使用變數名稱，其實就是在使用這塊記憶體位置；同樣的事情也發生在數組身上，「數組名稱所代表的是這串數組首個元素的記憶體位置，通常就簡稱數組的首地址」。</p>
+<p>了解數組名稱代表首地址後，那為什麼索引值是從零開始呢？簡單的解釋的話，「是因為索引值表示的是，與首地址的偏移量」，而第一個元素的記憶位置就是首地址，所以偏移量當然就為 0，而第二個元素就是，首地址再偏移 1 個宣告資料型態的長度（此處是 int ，通常為 4 Byte）…以此類推。</p>
+<h2 id="深入了解"><a href="#深入了解" class="headerlink" title="深入了解"></a>深入了解</h2><hr>
+<p>在了解「數組名稱是首元素的記憶體位置」以及「索引值表示的是偏移量」兩件事後，讓我們再深入探討這兩件事情…。</p>
+<p>當講到「記憶體位置」，反應快的小夥伴，可能會聯想到「指標 pointer」。沒錯，數組名稱可以視為一種指標，不過他是「常量指標」，即我們不能更改他指向的位置！</p>
+<p>那麼既然是指標，我們可否用指標的取值符號’*’，訪問數組中的元素呢？答案是可以的，讓我們看看下面這段代碼。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int student_id[3];</span><br><span class="line">*(student_id + 0) &#x3D; 40096;  &#x2F;&#x2F; 等同 student_id[0]</span><br><span class="line">*(student_id + 1) &#x3D; 40097;  &#x2F;&#x2F; 等同 student_id[1]</span><br><span class="line">*(student_id + 2) &#x3D; 40098;  &#x2F;&#x2F; 等同 student_id[2]</span><br></pre></td></tr></table></figure>
+<p>恩，原來如此，這樣看來對「偏移量」的理解也更清楚了！因為數組是連續存儲在記憶體中，並且宣告時有指定資料型態，所以當我們將「首地址 加上 偏移量時」編譯器會知道我們下一個要訪問的資料是從記憶體的哪個位置開始！到這邊，對於數組該認識的部分，都結束了。但好學的小夥伴可以繼續看下去…我們將介紹數組另外一種「奇怪、可怕的表達方式」。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int student_id[3];</span><br><span class="line">*(0 + student_id) &#x3D; 40096;</span><br><span class="line">*(1 + student_id) &#x3D; 40097;</span><br><span class="line">*(2 + student_id) &#x3D; 40098;</span><br></pre></td></tr></table></figure>
+<p>上述這段代碼，恩…沒什麼啊！什麼奇怪、可怕的表達方式，不過就是把加法兩邊的東西對調而已。那麼讓我們接著看下去…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int student_id[3];</span><br><span class="line">0[student_id] &#x3D; 40096; &#x2F;&#x2F; 等同 student_id[0]</span><br><span class="line">1[student_id] &#x3D; 40097; &#x2F;&#x2F; 等同 student_id[1]</span><br><span class="line">2[student_id] &#x3D; 40098; &#x2F;&#x2F; 等同 student_id[2]</span><br></pre></td></tr></table></figure>
+<p>什麼！這什麼東西，沒錯數組可以這樣表達，再深入點思考這件事，上面所講述的「偏移量」不過是一種理解數組的角度，本質上這樣的表達式就是在定位記憶體的位置。但在使用上，並不建議這種令人困惑的寫法喔！</p>
+<h2 id="多維數組"><a href="#多維數組" class="headerlink" title="多維數組"></a>多維數組</h2><hr>
+<p>最後，作為檢視是否真正理解上述知識，我們來思考看看多維數組的原理吧！為了說明方便我們就以二維數組來作為例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int student_id[2][3]; &#x2F;&#x2F; 宣告一個二維數組，共有 2 x 3 &#x3D; 6 個空間</span><br><span class="line">student_id[0][0] &#x3D; 40096;</span><br><span class="line">student_id[0][1] &#x3D; 40097;</span><br><span class="line">student_id[0][2] &#x3D; 40098;</span><br><span class="line">student_id[1][0] &#x3D; 50096;</span><br><span class="line">student_id[1][1] &#x3D; 50097;</span><br><span class="line">student_id[1][2] &#x3D; 50098;</span><br></pre></td></tr></table></figure>
+<p>在校務系統中，需要區分 2 個班級的學生，恩…我們有二維數組可以使用！上面這段代碼，我們可以理解為共有 2 個班級，每個班級 3 個學生。並且由於是二個維度的數組，所以我們必須輸入兩個索引值來定位元素在記憶體中的位置，那麼要如何用「指標」的方式來思考這件事呢？小夥伴們可以找張白紙，寫下「用指標訪問二維數組元素的表達式」，再繼續看下去喔！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int student_id[2][3];</span><br><span class="line">*(*(student_id + 0) + 0) &#x3D; 40096;</span><br><span class="line">*(*(student_id + 0) + 1) &#x3D; 40097;</span><br><span class="line">*(*(student_id + 0) + 2) &#x3D; 40098;</span><br><span class="line">*(*(student_id + 1) + 0) &#x3D; 50096;</span><br><span class="line">*(*(student_id + 1) + 1) &#x3D; 50097;</span><br><span class="line">*(*(student_id + 1) + 2) &#x3D; 50098;</span><br></pre></td></tr></table></figure>
+<p>哇…這是什麼？讓我們慢慢拆解。首先，看下第一行中<code>*(student + 0)</code>，恩…這個我知道「就是 首地址 偏移 0 然後取出其指向的記憶體中的值」。接著，我們先把剛剛這行代碼用符號’A’表示，再看看增加了什麼<code>*(A + 0)</code>，恩…怎麼好像跟剛剛差不多「地址 加上 偏移量 然後 取值」。沒錯，就是這麼簡單，所以整個合起來理解就是「首先，數組的首地址偏移後取值，取出來的並不是像一維數組一樣單純的變數值，而是一個指標；所以顯而易見的，這個取出來的指標再加上偏移量，所指向的記憶體位置才是最終我們所存儲的資料，因此才會看到上方取值兩次的情況喔！」。</p>
+<h2 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h2><hr>
+<ul>
+<li>數組，以連續的方式將資料存儲在記憶體中。</li>
+<li>靜態數組初始化，若使用花括號指定元素值時，可以不用指定空間大小。 </li>
+<li>數組的名稱，表示的是「記憶體位置」，也就是首個元素的位置，可視為一個「常量指標」。</li>
+<li>數組中元素，訪問時「索引值從 0 開始」。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
